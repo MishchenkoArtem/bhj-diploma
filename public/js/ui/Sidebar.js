@@ -1,24 +1,20 @@
-/**
- * Класс Sidebar отвечает за работу боковой колонки:
- * кнопки скрытия/показа колонки в мобильной версии сайта
- * и за кнопки меню
- * */
 class Sidebar {
-  /**
-   * Запускает initAuthLinks и initToggleButton
-   * */
+  
+  // ----- Запускает initAuthLinks и initToggleButton
   static init() {
     this.initAuthLinks();
     this.initToggleButton();
   }
 
-  /**
-   * Отвечает за скрытие/показа боковой колонки:
-   * переключает два класса для body: sidebar-open и sidebar-collapse
-   * при нажатии на кнопку .sidebar-toggle
-   * */
+  // ----- Отвечает за скрытие/показа боковой колонки: переключает два класса для body: sidebar-open и sidebar-collapse при нажатии на кнопку.sidebar-toggle
   static initToggleButton() {
+    const bodySidebar = document.querySelector('.sidebar-mini');
+    const sidebar = document.querySelector('.sidebar-toggle');
 
+    sidebar.addEventListener('click', () => {
+      bodySidebar.classList.toggle('sidebar-open');
+      bodySidebar.classList.toggle('sidebar-collapse');
+    });
   }
 
   /**
@@ -29,6 +25,21 @@ class Sidebar {
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
+    const register = document.querySelector('.menu-item_register');
+    const login = document.querySelector('.menu-item_login');
+    
+    register.addEventListener('click', (evt) => {
+      evt.preventDefault();
 
+      const modal = App.getModal('register');
+      modal.open();
+    });
+
+    login.addEventListener('click', (evt) => {
+      evt.preventDefault();
+
+      const modal = App.getModal('login');
+      modal.open();
+    });
   }
 }
