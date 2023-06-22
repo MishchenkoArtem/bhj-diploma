@@ -9,15 +9,14 @@ class Modal {
 
     this.button.forEach(element => {
       element.addEventListener('click', (event) => {
-        event.preventDefault();
-
-        this.close();
+        this.onClose(event);
       });
     });
   }
 
-  onClose(e) {
-    
+  onClose(event) {
+    event.preventDefault();
+    this.close();
   }
   
   open() {
@@ -25,6 +24,6 @@ class Modal {
   }
 
   close() {
-    this.element.style.display = 'none';
+    this.element.style = 'display: none';
   }
 }

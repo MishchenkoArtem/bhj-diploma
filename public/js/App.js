@@ -44,9 +44,6 @@ class App {
     };
   }
 
-  /**
-   * Инициализирует всплывающие окна
-   * */
   static initModals() {
     this.modals = {
       register: new Modal(document.querySelector("#modal-register")),
@@ -59,7 +56,7 @@ class App {
 
   /**
    * Инициализирует виджеты
-   * */
+   **/
   static initWidgets() {
     this.widgets = {
       accounts: new AccountsWidget(document.querySelector(".accounts-panel")),
@@ -89,12 +86,6 @@ class App {
     };
   }
 
-  /**
-   * Возвращает всплывающее окно
-   * Обращается к объекту App.modals и извлекает
-   * из него свойство modalName:
-   * App.getModal( 'login' ); // извелекает App.modals.login
-   * */
   static getModal(modalName) {
     return this.modals[modalName];
   }
@@ -119,12 +110,6 @@ class App {
     return this.widgets[widgetName];
   }
 
-  /**
-   * Возвращает форму по названию
-   * Обращается к объекту App.forms и извлекает
-   * из него свойство formName:
-   * App.getWidget( 'transactions' ); // извелекает App.forms.transactions
-   * */
   static getForm(formName) {
     return this.forms[formName];
   }
