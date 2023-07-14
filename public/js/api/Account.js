@@ -2,12 +2,14 @@
 
 class Account extends Entity {
   // --- Получает информацию о счёте
-  
+
+  static url = '/account';
+
   static get(id = '', callback) {
-    this.list({
-      data: id,
-      url: this.url + '/account'
-    },
-      callback);
+    createRequest({
+      method: 'GET',
+      url: this.url + `/account/${id}`,
+      callback: callback
+    });
   }
 }

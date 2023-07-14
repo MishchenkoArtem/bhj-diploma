@@ -8,6 +8,8 @@ class AsyncForm {
     this.registerEvents();
   }
 
+  // --- Необходимо запретить отправку формы и в момент отправки вызывает метод submit()
+
   registerEvents() {
     this.element.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -16,6 +18,8 @@ class AsyncForm {
     });
   }
 
+  // --- Преобразует данные формы в объект вида { 'название поля формы 1': 'значение поля формы 1', 'название поля формы 2': 'значение поля формы 2' }
+  
   getData() {
     const formData = new FormData(this.element);
     return formData;
@@ -25,6 +29,8 @@ class AsyncForm {
     
   }
 
+  // --- Вызывает метод onSubmit и передаёт туда данные, полученные из метода getData()
+  
   submit() {
     this.onSubmit(this.getData());
   }

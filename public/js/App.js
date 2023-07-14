@@ -159,10 +159,8 @@ class App {
     this.getPage("transactions").clear();
   }
 
-  /**
-   * Обновляет виджеты и содержимое страниц
-   * Вызывает методы updateWidgets и updatePages()
-   * */
+  // --- Обновляет виджеты и содержимое страниц Вызывает методы updateWidgets и updatePages()
+  
   static update() {
     this.updateWidgets();
     this.updatePages();
