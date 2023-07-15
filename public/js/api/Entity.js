@@ -4,14 +4,15 @@ class Entity {
   // --- Запрашивает с сервера список данных. Это могут быть счета или доходы/расходы (в зависимости от того, что наследуется от Entity)
   
   static list(data, callback) {
-    if (this.url === '/transaction') { 
-      this.url += `?account_id=${data}`;
+    let newUrl = this.url;
+
+    if (newUrl === '/transaction') { 
+      newUrl += `?account_id=${data}`;
     }
 
     createRequest({
       method: 'GET',
-      url: this.url,
-      data: data,
+      url: newUrl,
       callback: callback
     });
   }
@@ -19,7 +20,6 @@ class Entity {
   // --- Создаёт счёт или доход/расход с помощью запроса на сервер. (в зависимости от того, что наследуется от Entity)
 
   static create(data, callback) {
-    console.log(data);
     createRequest({
       method: 'PUT',
       url: this.url,

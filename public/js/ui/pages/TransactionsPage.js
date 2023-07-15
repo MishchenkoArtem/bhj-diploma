@@ -75,14 +75,15 @@ class TransactionsPage {
   // --- С помощью Account.get() получает название счёта и отображает его через TransactionsPage.renderTitle. Получает список Transaction.list и полученные данные передаёт в TransactionsPage.renderTransactions()
 
   render(options) {
+    
     if (options) {
+      this.lastOptions = options;
       Account.get(options.account_id, (error, response) => {
         this.renderTitle(response);
       });
 
       Transaction.list(options.account_id, (error, response) => {
         if (response.success) {
-          console.log(response.data);
           this.renderTransactions(response.data);
         }
       });
@@ -99,9 +100,9 @@ class TransactionsPage {
 
   // --- Устанавливает заголовок в элемент .content-title
 
-  renderTitle(name) {
+  renderTitle(data) {
     const elementTitle = this.element.querySelector('.content-title');
-    elementTitle.textContent = name;
+    elementTitle.textContent = data.data.name;
   }
 
   // --- Форматирует дату в формате 2019-03-10 03:20:41 (строка) в формат «10 марта 2019 г. в 03:20»

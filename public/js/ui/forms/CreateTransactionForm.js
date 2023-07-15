@@ -26,8 +26,6 @@ class CreateTransactionForm extends AsyncForm {
   // --- Создаёт новую транзакцию (доход или расход) с помощью Transaction.create. По успешному результату вызывает App.update сбрасывает форму и закрывает окно, в котором находится форма
 
   onSubmit(data) {
-    console.log(data);
-    
     Transaction.create(data, (error, response) => {
       if (response.success) {
         const modal = document.querySelectorAll('.modal');

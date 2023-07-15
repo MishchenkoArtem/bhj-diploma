@@ -216,6 +216,24 @@
       "account_id": "1d8lj23p3ljvjt0g6",
       "user_id": "1d8lj24snlj7d82uh",
       "created_at": "2023-07-09T14:47:29.953Z"
+    },
+    {
+      "id": "1d8lj25lvlk47sjp6",
+      "type": "income",
+      "name": "Хинкали",
+      "sum": 50,
+      "account_id": "1d8lj23p3ljvjt0g6",
+      "user_id": "1d8lj24snlj7d82uh",
+      "created_at": "2023-07-15T16:20:46.649Z"
+    },
+    {
+      "id": "1d8lj25mqlk47ssw8",
+      "type": "expense",
+      "name": "соус",
+      "sum": 25,
+      "account_id": "1d8lj23p3ljvjt0g6",
+      "user_id": "1d8lj24snlj7d82uh",
+      "created_at": "2023-07-15T16:20:58.567Z"
     }
   ]
 }
