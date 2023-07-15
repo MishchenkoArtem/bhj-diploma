@@ -39,7 +39,6 @@ class AccountsWidget {
     const user = User.current()
     if (user) {
       Account.list(user, (error, response) => {
-        console.log(error);
         if (response.success) {
           this.clear();
           this.renderItem(response.data);

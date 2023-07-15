@@ -76,14 +76,13 @@ class TransactionsPage {
 
   render(options) {
     if (options) {
-      this.lastOptions = options;
-
-      Account.get(this.lastOptions.account_id, (error, response) => {
+      Account.get(options.account_id, (error, response) => {
         this.renderTitle(response);
       });
 
-      Transaction.list(this.lastOptions.account_id, (error, response) => {
+      Transaction.list(options.account_id, (error, response) => {
         if (response.success) {
+          console.log(response.data);
           this.renderTransactions(response.data);
         }
       });
@@ -101,7 +100,6 @@ class TransactionsPage {
   // --- Устанавливает заголовок в элемент .content-title
 
   renderTitle(name) {
-    console.log(name)
     const elementTitle = this.element.querySelector('.content-title');
     elementTitle.textContent = name;
   }
@@ -153,13 +151,10 @@ class TransactionsPage {
   // --- Отрисовывает список транзакций на странице используя getTransactionHTML
 
   renderTransactions(data) {
-    const element = this.element.querySelectorAll('.content');
-    //const transaction = element.querySelectorAll('.transaction');
-    //element.innerHTML = ''
-    //transaction.forEach(item => item.remove());
+    const content = document.querySelector('.content');
+    content.innerHTML = '';
     
     const arr = Array.from(data);
-
     arr.forEach(item => {
       this.element.querySelector('.content').insertAdjacentHTML('beforeend', this.getTransactionHTML(item));
     });
