@@ -35,7 +35,6 @@ class TransactionsPage {
         const transactionId = transactionRemove.dataset.id;
         this.removeTransaction(transactionId);
       }
-
     });
   }
 
@@ -64,8 +63,11 @@ class TransactionsPage {
 
   removeTransaction(id) {
     if (confirm('Вы действительно хотите удалить эту транзакцию?')) {
-      Transaction.remove(id, {}, (error, response) => {
-        if (response && response.success) {
+      const formData = new FormData();
+      formData.append('id', id);
+
+      Transaction.remove(formData, (error, response) => {
+        if (response.success) {
           App.update();
         }
       });
@@ -75,7 +77,6 @@ class TransactionsPage {
   // --- С помощью Account.get() получает название счёта и отображает его через TransactionsPage.renderTitle. Получает список Transaction.list и полученные данные передаёт в TransactionsPage.renderTransactions()
 
   render(options) {
-    
     if (options) {
       this.lastOptions = options;
       Account.get(options.account_id, (error, response) => {
@@ -102,7 +103,12 @@ class TransactionsPage {
 
   renderTitle(data) {
     const elementTitle = this.element.querySelector('.content-title');
-    elementTitle.textContent = data.data.name;
+    
+    if (data.success) {
+      elementTitle.textContent = data.data.name;
+    } else {
+      elementTitle.textContent = data;
+    }
   }
 
   // --- Форматирует дату в формате 2019-03-10 03:20:41 (строка) в формат «10 марта 2019 г. в 03:20»

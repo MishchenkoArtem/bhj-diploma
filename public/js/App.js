@@ -167,12 +167,8 @@ class App {
     this.updateForms();
   }
 
-  /**
-   * Обновляет страницы
-   * Обращается к единственной странице transactions
-   * через getPage и вызывает у этой страницы
-   * метод update()
-   * */
+  // --- Обновляет страницы Обращается к единственной странице transactions через getPage и вызывает у этой страницы метод update()
+  
   static updatePages() {
     this.getPage("transactions").update();
   }

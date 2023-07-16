@@ -32,17 +32,7 @@
     {
       "name": "Инвестиции",
       "user_id": "1d8lj24snlj7d82uh",
-      "id": "1d8lj24zvljkdnzd6"
-    },
-    {
-      "name": "Артём",
-      "user_id": "1d8lj24snlj7d82uh",
-      "id": "1d8lj287jljq6rd0z"
-    },
-    {
-      "name": "Пельменная",
-      "user_id": "1d8lj24snlj7d82uh",
-      "id": "1d8lj23p3ljvjt0g6"
+      "id": "1d8lj2ipflk5rb6tw"
     }
   ],
   "transactions": [
@@ -182,58 +172,13 @@
       "user_id": "1"
     },
     {
-      "id": "1d8lj24rvljq4mqqy",
+      "id": "1d8lj2iq1lk5rbuh0",
       "type": "income",
-      "name": "Сбер",
-      "sum": 10000,
-      "account_id": "1d8lj24zvljkdnzd6",
+      "name": "Apple",
+      "sum": 2000000000,
+      "account_id": "1d8lj2ipflk5rb6tw",
       "user_id": "1d8lj24snlj7d82uh",
-      "created_at": "2023-07-05T19:43:30.537Z"
-    },
-    {
-      "id": "1d8lj23guljrjy1g3",
-      "type": "income",
-      "name": "Сбер",
-      "sum": 10000,
-      "account_id": "1d8lj24zvljkdnzd6",
-      "user_id": "1d8lj24snlj7d82uh",
-      "created_at": "2023-07-06T19:39:58.034Z"
-    },
-    {
-      "id": "1d8lj23heljrjygc1",
-      "type": "income",
-      "name": "Сбер",
-      "sum": 10000,
-      "account_id": "1d8lj287jljq6rd0z",
-      "user_id": "1d8lj24snlj7d82uh",
-      "created_at": "2023-07-06T19:40:17.328Z"
-    },
-    {
-      "id": "1d8lj23roljvjth9e",
-      "type": "income",
-      "name": "Пельмень",
-      "sum": 250,
-      "account_id": "1d8lj23p3ljvjt0g6",
-      "user_id": "1d8lj24snlj7d82uh",
-      "created_at": "2023-07-09T14:47:29.953Z"
-    },
-    {
-      "id": "1d8lj25lvlk47sjp6",
-      "type": "income",
-      "name": "Хинкали",
-      "sum": 50,
-      "account_id": "1d8lj23p3ljvjt0g6",
-      "user_id": "1d8lj24snlj7d82uh",
-      "created_at": "2023-07-15T16:20:46.649Z"
-    },
-    {
-      "id": "1d8lj25mqlk47ssw8",
-      "type": "expense",
-      "name": "соус",
-      "sum": 25,
-      "account_id": "1d8lj23p3ljvjt0g6",
-      "user_id": "1d8lj24snlj7d82uh",
-      "created_at": "2023-07-15T16:20:58.567Z"
+      "created_at": "2023-07-16T18:15:25.955Z"
     }
   ]
 }
